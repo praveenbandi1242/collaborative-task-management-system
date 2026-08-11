@@ -3,9 +3,9 @@ spring:
     name: task-manager
 
   datasource:
-    url: jdbc:postgresql://taskmanager-postgres:5432/taskmanager
-    username: postgres
-    password: postgres
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
 
   jpa:
     hibernate:
@@ -17,9 +17,8 @@ spring:
     open-in-view: false
 
 jwt:
-  secret: change-this-secret-key-to-a-long-random-secret-key
-  expiration: 86400000
-
+  secret: ${JWT_SECRET}
+  expiration: ${JWT_EXPIRATION:86400000}
 
 server:
-  port: 8080
+  port: ${PORT:8080}
