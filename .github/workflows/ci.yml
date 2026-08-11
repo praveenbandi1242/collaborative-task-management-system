@@ -21,10 +21,9 @@ jobs:
 
     defaults:
       run:
-        working-directory: backend
+        working-directory: task-manager
 
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -34,6 +33,7 @@ jobs:
           distribution: temurin
           java-version: '25'
           cache: maven
+          cache-dependency-path: task-manager/pom.xml
 
       - name: Make Maven wrapper executable
         run: chmod +x mvnw
@@ -49,10 +49,9 @@ jobs:
 
     defaults:
       run:
-        working-directory: backend
+        working-directory: task-manager
 
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -62,6 +61,7 @@ jobs:
           distribution: temurin
           java-version: '25'
           cache: maven
+          cache-dependency-path: task-manager/pom.xml
 
       - name: Make Maven wrapper executable
         run: chmod +x mvnw
@@ -82,7 +82,6 @@ jobs:
         working-directory: frontend
 
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -106,7 +105,6 @@ jobs:
     needs: frontend
 
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
