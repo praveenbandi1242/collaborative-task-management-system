@@ -13,7 +13,6 @@ on:
       - master
       - develop
 
-
 jobs:
 
   backend-test:
@@ -43,7 +42,7 @@ jobs:
         run: ./mvnw clean verify
 
 
-    backend-docker:
+  backend-docker:
     name: Backend - Docker Build
     runs-on: ubuntu-latest
     needs: backend-test
