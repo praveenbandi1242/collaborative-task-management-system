@@ -1,6 +1,7 @@
 import { Client } from "@stomp/stompjs";
 
-const WS_URL = "ws://localhost:8080/ws";
+const WS_URL =
+    import.meta.env.VITE_API_URL.replace(/^http/, "ws") + "/ws";
 
 export const createProjectWebSocket = (
     projectId,
