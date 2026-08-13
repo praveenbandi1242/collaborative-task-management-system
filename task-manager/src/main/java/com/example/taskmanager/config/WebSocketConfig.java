@@ -43,7 +43,8 @@ public class WebSocketConfig
 
         registry.addEndpoint("/ws")
                 .setAllowedOriginPatterns(
-                        "http://localhost:*"
+                        "http://localhost:*",
+                        "https://collaborative-task-management-system-uqa7.onrender.com"
                 );
     }
 
